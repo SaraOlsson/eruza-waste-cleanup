@@ -8,7 +8,8 @@
   },
   "variables": {
     "prefix": "eruzawaste",
-    "speechName": "[concat(variables('prefix'), 'speech')]"
+    "speechName": "[concat(variables('prefix'), 'speech')]",
+    "storageName": "[concat(variables('prefix'), 'storage')]"
   },
   "resources": [
     {
@@ -20,8 +21,77 @@
       "sku": {
         "name": "[parameters('speechsku')]"
       },
+      "properties": {}
+    },
+    {
+      "name": "[variables('storageName')]",
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2019-06-01",
+      "location": "[resourceGroup().location]",
       "properties": {
-        "customSubDomainName": null
+        "accessTier": "Hot",
+        "minimumTlsVersion": "TLS1_2"
+      },
+      "dependsOn": [],
+      "sku": {
+        "name": "Standard_RAGRS"
+      },
+      "kind": "StorageV2",
+      "tags": {}
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts/blobServices",
+      "apiVersion": "2020-08-01-preview",
+      "name": "[concat(variables('storageName'), '/default')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts', variables('storageName'))]"
+      ],
+      "sku": {
+        "name": "Standard_LRS",
+        "tier": "Standard"
+      },
+      "properties": {
+        "cors": {
+          "corsRules": [
+            {
+              "allowedOrigins": [
+                "*"
+              ],
+              "allowedMethods": [
+                "DELETE",
+                "GET",
+                "HEAD",
+                "MERGE",
+                "POST",
+                "OPTIONS",
+                "PUT"
+              ],
+              "maxAgeInSeconds": 86400,
+              "exposedHeaders": [
+                "*"
+              ],
+              "allowedHeaders": [
+                "*"
+              ]
+            }
+          ]
+        },
+        "deleteRetentionPolicy": {
+          "enabled": false
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+      "apiVersion": "2020-08-01-preview",
+      "name": "[concat(variables('storageName'), '/default/event-images')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts', variables('storageName'))]"
+      ],
+      "properties": {
+        "defaultEncryptionScope": "$account-encryption-key",
+        "denyEncryptionScopeOverride": false,
+        "publicAccess": "Container"
       }
     }
   ],
