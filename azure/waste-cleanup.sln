@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "azure", "azure", "{154FF41D-5A49-420F-A98B-5F507AA13282}"
+EndProject
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "AzureResourceGroup", "AzureResourceGroup\AzureResourceGroup.deployproj", "{CC12172B-920D-4555-A3FA-DB0256C9531F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC12172B-920D-4555-A3FA-DB0256C9531F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC12172B-920D-4555-A3FA-DB0256C9531F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC12172B-920D-4555-A3FA-DB0256C9531F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC12172B-920D-4555-A3FA-DB0256C9531F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CC12172B-920D-4555-A3FA-DB0256C9531F} = {154FF41D-5A49-420F-A98B-5F507AA13282}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4119386C-5168-4B3B-B53E-CC3784425689}
+	EndGlobalSection
+EndGlobal

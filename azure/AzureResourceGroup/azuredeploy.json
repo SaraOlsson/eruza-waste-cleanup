@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "speechsku": {
+      "type": "string"
+    }
+  },
+  "variables": {
+    "prefix": "eruzawaste",
+    "speechName": "[concat(variables('prefix'), 'speech')]"
+  },
+  "resources": [
+    {
+      "apiVersion": "2017-04-18",
+      "name": "[variables('speechName')]",
+      "location": "[resourceGroup().location]",
+      "type": "Microsoft.CognitiveServices/accounts",
+      "kind": "SpeechServices",
+      "sku": {
+        "name": "[parameters('speechsku')]"
+      },
+      "properties": {
+        "customSubDomainName": null
+      }
+    }
+  ],
+  "outputs": {}
+}
