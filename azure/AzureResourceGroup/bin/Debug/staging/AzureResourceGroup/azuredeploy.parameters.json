@@ -4,6 +4,15 @@
   "parameters": {
     "speechsku": {
       "value": "F0"
+    },
+    "iotcentraltemplate": {
+      "value": "iotc-pnp-preview@1.0.0"
+    },
+    "iotcentrallocation": {
+      "value": "europe"
+    },
+    "iotcentralsku": {
+      "value": "ST2"
     }
   }
 }

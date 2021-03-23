@@ -4,12 +4,36 @@
   "parameters": {
     "speechsku": {
       "type": "string"
+    },
+    "iotcentraltemplate": {
+      "type": "string"
+    },
+    "iotcentrallocation": {
+      "type": "string"
+    },
+    "iotcentralsku": {
+      "type": "string"
+    },
+    "acrSku": {
+      "type": "string",
+      "metadata": {
+        "description": "Tier of your Azure Container Registry."
+      },
+      "defaultValue": "Basic",
+      "allowedValues": [
+        "Basic",
+        "Standard",
+        "Premium"
+      ]
     }
   },
   "variables": {
     "prefix": "eruzawaste",
     "speechName": "[concat(variables('prefix'), 'speech')]",
-    "storageName": "[concat(variables('prefix'), 'storage')]"
+    "storageName": "[concat(variables('prefix'), 'storage')]",
+    "iotcentralName": "[concat(variables('prefix'), 'iotcentral')]",
+    "iotcentralSubName": "[concat(variables('prefix'), 'iotcentralsub')]",
+    "acrName": "[concat(variables('prefix'), 'acr')]"
   },
   "resources": [
     {
@@ -92,6 +116,38 @@
         "defaultEncryptionScope": "$account-encryption-key",
         "denyEncryptionScopeOverride": false,
         "publicAccess": "Container"
+      }
+    },
+    {
+      "type": "Microsoft.IoTCentral/IoTApps",
+      "name": "[variables('iotcentralName')]",
+      "location": "[parameters('iotcentrallocation')]",
+      "apiVersion": "2018-09-01",
+      "sku": {
+        "name": "[parameters('iotcentralsku')]"
+      },
+      "properties": {
+        "displayName": "[variables('iotcentralName')]",
+        "subdomain": "[variables('iotcentralSubName')]",
+        "template": "[parameters('iotcentraltemplate')]"
+      }
+    },
+    {
+      "name": "[variables('acrName')]",
+      "type": "Microsoft.ContainerRegistry/registries",
+      "apiVersion": "2019-12-01-preview",
+      "location": "[resourceGroup().location]",
+      "comments": "Container registry for storing docker images",
+      "tags": {
+        "displayName": "Container Registry",
+        "container.registry": "[variables('acrName')]"
+      },
+      "sku": {
+        "name": "[parameters('acrSku')]",
+        "tier": "[parameters('acrSku')]"
+      },
+      "properties": {
+        "adminUserEnabled": "false"
       }
     }
   ],
