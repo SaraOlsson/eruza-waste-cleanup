@@ -7,7 +7,8 @@ import TopMenuBar from './components/TopMenuBar';
 import BottomMenuBar from "./components/BottomMenuBar";
 
 import {
-    SpeechPage
+    SpeechPage,
+    CameraPage
 } from './pages'
 
 // main component of the app
@@ -23,8 +24,6 @@ function EventApp() {
   
       <div className={classes.body}>
   
-
-  
           <div className={classes.headerrow}>
             <TopMenuBar/>
           </div>
@@ -34,7 +33,7 @@ function EventApp() {
             <Switch>
               <Route exact path="/home" component={SpeechPage}/>
               <Route path="/scan" component={SpeechPage} />
-              <Route path="/photo" component={SpeechPage} />
+              <Route path="/photo" component={CameraPage} />
               <Route path="/speech" component={SpeechPage} />
               <Route path="/stats" component={SpeechPage} />
             </Switch>

@@ -10,7 +10,7 @@ const axios = require('axios');
 function SpeechPage() {
 
     const [token, setToken] = useState('') 
-    const [displayText, setDisplayText] = useState('')
+    const [displayText, setDisplayText] = useState('...')
     const classes = useStyles()
 
     useEffect(() => {
@@ -23,21 +23,15 @@ function SpeechPage() {
         },[token])
 
     useEffect(() => {
-        // getToken()
         getTokenOrCookie()
     },[])
 
     const getTokenOrCookie = async () => {
         console.log("check for valid speech key/region")
 
-        //this.inlineSttFromMic()
-
         const tokenRes = await getTokenOrRefresh();
         console.log(tokenRes)
     }
-
-    
-
 
     const sttFromMic = async () => {
         const tokenObj = await getTokenOrRefresh();
@@ -58,46 +52,20 @@ function SpeechPage() {
             }
 
             setDisplayText(displayText)
-
         });
     }
 
-     const fileChange = async (event) => {
-        const audioFile = event.target.files[0];
-        console.log(audioFile);
-        const fileInfo = audioFile.name + ` size=${audioFile.size} bytes `;
-
-        setDisplayText(fileInfo)
-
-        const tokenObj = await getTokenOrRefresh();
-        const speechConfig = speechsdk.SpeechConfig.fromAuthorizationToken(tokenObj.authToken, tokenObj.region);
-        speechConfig.speechRecognitionLanguage = 'en-US';
-
-        const audioConfig = speechsdk.AudioConfig.fromWavFileInput(audioFile);
-        const recognizer = new speechsdk.SpeechRecognizer(speechConfig, audioConfig);
-
-        recognizer.recognizeOnceAsync(result => {
-            let displayText;
-            if (result.reason === ResultReason.RecognizedSpeech) {
-                displayText = `RECOGNIZED: Text=${result.text}`
-            } else {
-                displayText = 'ERROR: Speech was cancelled or could not be recognized. Ensure your microphone is working properly.';
-            }
-
-            setDisplayText(fileInfo + displayText)
-        });
-    }
-
+    
     return(
 
         <div className={classes.infoContainer}>
             <h3>Record sound</h3>
-            <div className="row main-container">
-                    <div className="col-6">
+            <div className="row">
+                    <div className="col-4">
                         <i className="fas fa-microphone fa-lg mr-2" onClick={() => sttFromMic()}></i>
                         Convert speech to text from your mic.
 
-                        <div className="mt-2">
+                        {/* <div className="mt-2">
                             <label htmlFor="audio-file"><i className="fas fa-file-audio fa-lg mr-2"></i></label>
                             <input 
                                 type="file" 
@@ -106,9 +74,9 @@ function SpeechPage() {
                                 style={{display: "none"}} 
                             />
                             Convert speech to text from an audio file.
-                        </div>
+                        </div> */}
                     </div>
-                    <div className="col-6 output-display rounded">
+                    <div className="col-4 output-display rounded">
                         <code>{displayText}</code>
                     </div>
                 </div>
@@ -118,7 +86,7 @@ function SpeechPage() {
 
 const useStyles = makeStyles({
     infoContainer: {
-        padding: '15px'
+        padding: '25px'
     },
     infoText: {
         fontSize: 'small'
@@ -148,4 +116,30 @@ export default SpeechPage
 //     } catch (err) {
 //         console.log('There was an error authorizing your speech key.')
 //     }
+// }
+
+//  const fileChange = async (event) => {
+//     const audioFile = event.target.files[0];
+//     console.log(audioFile);
+//     const fileInfo = audioFile.name + ` size=${audioFile.size} bytes `;
+
+//     setDisplayText(fileInfo)
+
+//     const tokenObj = await getTokenOrRefresh();
+//     const speechConfig = speechsdk.SpeechConfig.fromAuthorizationToken(tokenObj.authToken, tokenObj.region);
+//     speechConfig.speechRecognitionLanguage = 'en-US';
+
+//     const audioConfig = speechsdk.AudioConfig.fromWavFileInput(audioFile);
+//     const recognizer = new speechsdk.SpeechRecognizer(speechConfig, audioConfig);
+
+//     recognizer.recognizeOnceAsync(result => {
+//         let displayText;
+//         if (result.reason === ResultReason.RecognizedSpeech) {
+//             displayText = `RECOGNIZED: Text=${result.text}`
+//         } else {
+//             displayText = 'ERROR: Speech was cancelled or could not be recognized. Ensure your microphone is working properly.';
+//         }
+
+//         setDisplayText(fileInfo + displayText)
+//     });
 // }
