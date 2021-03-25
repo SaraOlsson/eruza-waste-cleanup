@@ -1,7 +1,7 @@
 # Eruza 
 Eruza -  Waste Automation & Management System is a digital solution that aims to automate the end to end process of plastic bottle collection and impact report generation with  details like event ID, event location, benefited people count, delivered product list, photos of the bills, the digitized content of the bill, photos of the event, financial & funding details, etc
 
-Our mobile web application helps the volunteers to quickly capture image or voice content which is analyzed and transformed to metrics essential for generating the impact report. The solution makes it easy to run waste collection efforts, letting organizations focus on the social and environmental impact.
+Our mobile web application helps the volunteers to quickly capture image or voice content which is analyzed and transformed into metrics that are essential for generating the impact report. The solution makes it easy to run waste collection efforts, letting organizations focus on the social and environmental impact.
 
 The first part of the project is to automate the plastic collection in the bin using raspberry pi & xyz Algorithms. The second part is to digitize the physical bills, volunteer list, product list, delivery counts, etc by employing an image recognition algorithm integrated with the interactive mobile application.
 
