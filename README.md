@@ -3,8 +3,6 @@ Eruza -  Waste Automation & Management System is a digital solution that aims to
 
 Our mobile web application helps the volunteers to quickly capture image or voice content which is analyzed and transformed into metrics that are essential for generating the impact report. The solution makes it easy to run waste collection efforts, letting organizations focus on the social and environmental impact.
 
-The first part of the project is to automate the plastic collection in the bin using raspberry pi & xyz Algorithms. The second part is to digitize the physical bills, volunteer list, product list, delivery counts, etc by employing an image recognition algorithm integrated with the interactive mobile application.
-
 ## Repo Details
 
 High level directory structure for this repository:
@@ -33,7 +31,7 @@ High level directory structure for this repository:
 12. [Raspberry Pi](https://www.raspberrypi.org/)
 
 # Technical Overview
-We have used the [Custom Vision Service](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/) for object detection. Object detection is useful to detect plastic bottles and count them.  Then we have used [Optical Character Recognition (OCR)](https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/concept-recognizing-text) for converting the image of the receipt into digital text.  We have created our application as a progressive web app (More details are given below). [Azure Blob container](https://docs.microsoft.com/en-us/azure/storage/blobs/) is used as a database to store the images of plastic bottles, receipts and event images. Storage tables are used for storing the event details, stats about collected bottles, product lists, digitized content of the receipt, etc. We also took advantage of [Azure IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/?view=iotedge-2018-06), [Azure IoT Central](https://docs.microsoft.com/en-us/azure/iot-central/), and used devices like [Raspberry Pi](https://www.raspberrypi.org/) as well. More detailed content is discussed below.
+We have used the [Custom Vision Service](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/) for object detection. Object detection is useful to detect plastic bottles and count them.  Then we have used [Optical Character Recognition (OCR)](https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/concept-recognizing-text) for converting the image of the receipt into digital text.  We have created our application as a progressive web app (More details are given below). [Azure Blob container](https://docs.microsoft.com/en-us/azure/storage/blobs/) is used as a database to store the images of plastic bottles, receipts and event images. Storage tables were created to enable storing the event details, stats about collected bottles, product lists, digitized content of the receipt, etc. We also took advantage of [Azure IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/?view=iotedge-2018-06), [Azure IoT Central](https://docs.microsoft.com/en-us/azure/iot-central/), and used devices like [Raspberry Pi](https://www.raspberrypi.org/) as well. More detailed content is discussed below.
 
 ## Azure Cognitive Services
 [Azure Cognitive Services](https://docs.microsoft.com/en-us/azure/cognitive-services/) is a family of cloud-based services that includes REST APIs and Client library SDKs that can embed cognitive intelligence into the application with ease. The categories of cognitive services include vision, speech, language, decision, and search. Thus, They can help the application to see, hear, speak, understand and assess the situation to be decisive, as accurately as possible.
@@ -63,7 +61,7 @@ We have built our web app as a progressive web app using React & typescript. We 
 ## Azure Storage Account
 We have used [Azure Storage Account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview) as our primary storage for our application. Azure Storage Account is the place where Azure Storage data objects are stored. Azure Storage data objects include blobs, queues, tables, files, and disks.  The organization can retrieve the necessary data from this database to create its impact report.
 
-We have used [Blob containers](https://docs.microsoft.com/en-us/azure/storage/blobs/) to store the images required for the project. In our case, we have stored the images of the plastic bottles and the receipts. Later, the organization can retrieve the images for the particular use case, like they can retrieve the images of the receipts for the purpose of the tax claim. We have also used the [Storage table](https://docs.microsoft.com/en-us/azure/storage/tables/table-storage-overview) to store the other data like event details, stats about collected bottles, product list, digitized content of the receipt, etc.
+We have used [Blob containers](https://docs.microsoft.com/en-us/azure/storage/blobs/) to store the images required for the project. In our case, we have stored the images of the plastic bottles and the receipts. Later, the organization can retrieve the images for the particular use case, like they can retrieve the images of the receipts for the purpose of the tax claim. We also started a [Storage table](https://docs.microsoft.com/en-us/azure/storage/tables/table-storage-overview) to store the other data like event details, stats about collected bottles, product list, digitized content of the receipt, etc, however some work to connect the data flow is left to future work.
 
 ## Azure IoT Edge
 [Azure IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/?view=iotedge-2018-06) is a fully managed service built on an Azure IoT hub that can deploy cloud intelligence locally on IoT edge devices like Raspberry Pi via Containers. We have used Azure Custom Vision to build a container model that can identify the plastic bottles.
@@ -111,7 +109,8 @@ Screenshots - Web app
 
 ## Enhancements
 
-- People can register in the app before dropping their bottles into the bin. Thus, Once they drop the bottles, the number of bottles is auto-calculated and the equivalent reddem points can be  attached to the bar code that is tagged with their mobile app. They can scan this bar code in any partnered food stalls all over the country to encash their points for food.
+Future work would be to add incentives for more people to recycle their plastic waste, possibly in a fully automated system:
+- People could register in the app before dropping their bottles into an IoT-connected waste bin. Thus, Once they drop the bottles, the number of bottles is auto-calculated and the equivalent reddem points can be attached to the bar code that is tagged with their mobile app. They can scan this bar code in any partnered food stalls all over the country to encash their points for food.
 - The bin capacity can be auto monitored using IoT Central and can enable auto notification to the administrator in case of bin overflow 
 - The app can also be used for City administration, Marine clean-up, disaster recovery, etc with slight modifications.
 
