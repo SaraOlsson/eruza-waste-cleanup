@@ -104,9 +104,9 @@ The calendar feature helps people to track their schedules. Filter feature helps
 
 ## Enhancements
 
-- People can register in the app before dropping their bottles into the bin. Thus, Once they drop the bottles, the number of bottles is auto-calculated and the equivalent points are attached to the bar code that is tagged with their mobile app. They can scan this bar code in the partnered food stalls all over the country to encash their points for food.
-- The Bin capacity can be monitored using IoT Central and notification will be sent if the bin is about to overflow
-- The same app can be used for City administration, Marine clean-up, disaster recovery, etc with slight modifications.
+- People can register in the app before dropping their bottles into the bin. Thus, Once they drop the bottles, the number of bottles is auto-calculated and the equivalent reddem points can be  attached to the bar code that is tagged with their mobile app. They can scan this bar code in any partnered food stalls all over the country to encash their points for food.
+- The bin capacity can be auto monitored using IoT Central and can enable auto notification to the administrator in case of bin overflow 
+- The app can also be used for City administration, Marine clean-up, disaster recovery, etc with slight modifications.
 
 
 ## Demo 
