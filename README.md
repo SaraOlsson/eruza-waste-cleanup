@@ -66,7 +66,7 @@ This tech comes in handy to operate in places that have limited internet connect
 
 ## Benefits
 
-### Plastic bottles can be collected with ease
+### Plastic bottles collection - Fast & Easy
 The proposed automated system automatically detects and recognizes the plastic bottle. Thus more collection bins can be placed in the stalls and bottle collection will be very quick as the Object detection system recognizes the plastic bottle, count the number and update the database.
 
 ### Digitization of physical bills
