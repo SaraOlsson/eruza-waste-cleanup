@@ -44,3 +44,8 @@ html {
     height: 100%;
     min-height: 100%;
 }
+
+.MuiButton-containedPrimary {
+    color: #fff;
+    background-color: #56A68C !important;
+}

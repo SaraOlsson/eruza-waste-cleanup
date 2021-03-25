@@ -29,9 +29,6 @@ import {
 } from '@material-ui/icons'
 
 
-// let img_src = require('../../assets/logo.png');
-//const fallbackProfileImage = require('../../assets/chefgirl.png')
-
 function TopMenuBar(props) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -74,11 +71,7 @@ function TopMenuBar(props) {
 
   const handleSearchChange = (searchvalue) => {
       console.log("searchvalue " + searchvalue)
-    // dispatch({
-    //   type: "SETSEARCH",
-    //   payload: searchvalue
-    // })
-  } // 
+  } 
 
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
@@ -137,9 +130,17 @@ function TopMenuBar(props) {
     </Menu>
   );
 
+//   .MuiAppBar-colorPrimary {
+//     color: #fff;
+//     background-color: #3f51b5;
+// }
+
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
+      <AppBar position="static" 
+      classes={{
+        colorPrimary: classes.test, // class name, e.g. `classes-nesting-root-x`
+      }}>
         <Toolbar>
 
           <div className={classes.sectionMobile}>
@@ -180,61 +181,6 @@ function TopMenuBar(props) {
           </div>
           <div className={classes.grow} />
 
-          {/* <Offline>
-            <div className={classes.offline}>
-            Offline
-            </div>
-          </Offline>
-            
-          <ProfileBtn signedIn={uid !== undefined}/> */}
-
-          {/* MENU START */}
-          {/* <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
-          </div>
-          <div className={classes.sectionMobile}>
-            <IconButton
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </div> */}
-          {/* MENU END */}
-
-
-          {/* <div className={classes.sectionDesktop}>
-          <ProfileBtn signedIn={props.signedIn} handleChange={props.handleChange}/>
-          </div>
-
-          <div className={classes.sectionMobile}>
-          <ProfileBtn signedIn={props.signedIn} handleChange={props.handleChange}/>
-          </div> */}
-
-          
-
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
@@ -244,62 +190,10 @@ function TopMenuBar(props) {
 }
 
 
-// function ProfileBtn (props) {
-
-//   const classes = useStyles();
-//   const history = useHistory();
-//   const userdoc = useSelector(state => state.firestore.data.userdoc);
-
-//   let btn = (
-//     <div>
-//       <Button
-//         variant="contained"
-//         color="primary"
-//         onClick={() => history.push("/login")}
-//         className={classes.buttonPad}
-//       >
-//         logga in
-//       </Button>
-//     </div> );
-
-//   // make sure info is loaded
-//   let img_src = (userdoc && userdoc.profile_img_url ) ? userdoc.profile_img_url : undefined
-    
-//   // if user has no profile image set in firebase
-//   /*
-//   if (img_src === undefined) {
-//     img_src = <AccountCircleIcon/>;
-//   } */
-
-//   // fallbackProfileImage
-//   let icon_content = (img_src !== undefined) ? <img src={img_src} onError={(e)=>{e.target.onerror = null; e.target.src=fallbackProfileImage}} className={classes.smallprofileimage} alt={"profile img"} /> : <AccountCircleIcon/>;
-
-//   let jsx_content = props.signedIn ? icon_content : btn;
-
-//   if(props.signedIn === true && userdoc)
-//   {
-//     return (
-//       <React.Fragment>
-//       <p className={classes.username}> {userdoc.username} </p>
-//       <IconButton
-//         edge="start"
-//         className={classes.menuButton}
-//         color="inherit"
-//         aria-label="open profile"
-//         onClick={() => history.push("/profile/" + userdoc.username)}
-//       >
-//       {jsx_content} </IconButton></React.Fragment>
-
-//     );
-//   } else {
-//     return btn;
-//   }
-
-// }
-
-// style={{marginRight: 15, color: 'rgba(255,255,255,0.9)'}}
-
 const useStyles = makeStyles(theme => ({
+  test: {
+    backgroundColor: '#56A68C'
+  },
   grow: {
     flexGrow: 1,
     backgroundColor: '#009688'

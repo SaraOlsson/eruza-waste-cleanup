@@ -36,6 +36,7 @@ function EventApp() {
           <div className={`${classes.mainContainer}`}>
   
             <Switch>
+              <Route exact path="/" component={HomePage}/>
               <Route exact path="/home" component={HomePage}/>
               <Route path="/scan" component={ReceiptPage} />
               <Route path="/photo" component={CameraPage} />

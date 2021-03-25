@@ -9,6 +9,8 @@ function HomePage() {
     // const [image, setImage] = React.useState(undefined);
     const classes = useStyles()
 
+    const sample_data = [15, 14, 20, 23, 43, 22, 12, 23]
+
 
     return(
 
@@ -17,13 +19,27 @@ function HomePage() {
             <div className={classes.tableInfo}>
                 <h3>Monday 22, 2021</h3>
                 
-                <div className="row">
+                <div className={`${classes.tableContainer}`}>
+                    <div className={`row`}>
                         <div className="col-6">
-                            Collected
+                            <b>Type</b>
                         </div>
                         <div className="col-6">
-                            360
+                            <b>Quantity</b>
+                        </div> 
+                    </div>
+                    {
+                        sample_data.map( (d, idx) => 
+                        <div key={idx} className={`row`}>
+                            <div className="col-6">
+                                Bottles
+                            </div>
+                            <div className="col-6">
+                                {d}
+                            </div> 
                         </div>
+                        )
+                    }
                 </div>
             </div>
 
@@ -55,8 +71,13 @@ const useStyles = makeStyles({
         fontSize: 'small'
     },
     tableInfo: {
-        maxHeight: 200,
+        maxHeight: 300,
         marginBottom: 50
+    },
+    tableContainer: {
+        backgroundColor: '#f2f2f2',
+        borderRadius: 5,
+        padding: 10
     }
 });
 

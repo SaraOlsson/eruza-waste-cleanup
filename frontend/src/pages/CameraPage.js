@@ -80,6 +80,8 @@ function CameraPage() {
         setImage(undefined);
     };
 
+    const labels = [{value: 'plastic', label: 'Plastic'}, {value: 'receipt', label: 'Receipt'}, {value: 'event', label: 'Event'} ]
+
     return(
 
         <div className={classes.infoContainer}>
@@ -100,7 +102,7 @@ function CameraPage() {
                     Save image
                 </Button>
                 <div style={{margin: 10}}>
-                    <RadioGroup value={'plastic'}/>
+                    <RadioGroup value={'plastic'} labels={labels}/>
                 </div>
             </div>
 
