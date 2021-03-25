@@ -79,14 +79,20 @@ This tech comes in handy to operate in places that have limited internet connect
 
 ## Benefits
 
-### Plastic bottles collection - Fast & Easy
-The proposed automated system automatically detects and recognizes the plastic bottle. Thus more collection bins can be placed in the stalls and bottle collection will be very quick as the Object detection system recognizes the plastic bottle, count the number and update the database.
+1. Plastic bottles collection - Fast & Easy
+The proposed automated system automatically recognize and count the number of plastic bottle. Thus stats can be updated in the database with ease.
 
-### Digitization of physical bills
-The app has an option to scan the images of the physical bills and it converts the image into the physical text via image recognition. The system has stored the images of the physical bills in a separate database for later reference (Maybe, Useful for tax claims). Thus transparency can be maintained.
+2. Digitization of physical bills
+The app has an option to scan the images of the physical bills with a single click and it converts the image into the digital text via image recognition. The system will also store the images of the physical bills in a separate database for later reference (Maybe, Useful for tax claims). Thus transparency can be maintained.
 
-### Easy volunteer addition
+3. Easy volunteer addition
 The interactive app prototype has a feature where volunteers can be added and notified about the event. Consider a scenario, If 10 people have shown interest in volunteering, their mail IDs can be added to the mobile app. Any delay in the event, any excess food details can be shared with all volunteers with a single click thus they can address the issue by bringing the right people.The contacts of the volunteers will be maintained at the database, thus the NGO can contact/notify them about future events without much difficulties.
+
+### Event Multimedia Database
+The app has the option to click pictures/videos during the event. Later, the pictures can be retrieved from the database if required for the impact report
+
+### Voice Support
+The volunteer cab update the collected plastic bottle count by just tapping the mic and talking. The Speech API will convert it into the text and store the data in the database
 
 ### Easy Impact report Generation
 The location, number of benefited people, Pictures of the events, delivered product list , financial and funding details will be attached to the event ID thus much helpful to generate the impact report.
@@ -98,11 +104,10 @@ The calendar feature helps people to track their schedules. Filter feature helps
 
 ## Enhancements
 
-People can register in the app before dropping their bottles into the bin. Thus, Once they drop the bottles, the number of bottles is auto-calculated and the equivalent points are attached to the bar code that is tagged with their mobile app. They can scan this bar code in the partnered food stalls all over the country to encash their points for food.
+1. People can register in the app before dropping their bottles into the bin. Thus, Once they drop the bottles, the number of bottles is auto-calculated and the equivalent points are attached to the bar code that is tagged with their mobile app. They can scan this bar code in the partnered food stalls all over the country to encash their points for food.
+2. The Bin capacity can be monitored using IoT Central and notification will be sent if the bin is about to overflow
+3. The same app can be used for City administration, Marine clean-up, disaster recovery, etc with slight modifications.
 
-The same idea can be implemented for City administration, Marine clean-up, disaster recovery with slight modifications.
-
-The Bin capacity can be monitored using IoT Central and notification will be sent if the bin is about to overflow
 
 ## Demo 
  [Demo](https://youtube.com) 
