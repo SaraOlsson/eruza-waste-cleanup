@@ -22,7 +22,7 @@ High level directory structure for this repository:
 1. [Azure Account](https://portal.azure.com) 
 2. [Custom Vision Service](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/)
 3. [Optical Character Recognition (OCR)](https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/concept-recognizing-text)
-4. [Speech API] (https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/index-speech-to-text)
+4. [Speech API](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/index-speech-to-text)
 5. [Read API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d986960601faab4bf452005)
 6. [Azure Storage Account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview)
 7. [Blob containers](https://docs.microsoft.com/en-us/azure/storage/blobs/)
