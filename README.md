@@ -24,7 +24,7 @@ High level directory structure for this repository:
 7. [Storage table](https://docs.microsoft.com/en-us/azure/storage/tables/table-storage-overview)
 8. [Azure IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/?view=iotedge-2018-06)
 9. [Azure IoT Central](https://docs.microsoft.com/en-us/azure/iot-central/)
-10.[Azure SDK](https://azure.github.io/azure-sdk-for-js/) 
+10.[Azure SDK](https://azure.github.io/azure-sdk-for-js/)
 11.[Raspberry Pi](https://www.raspberrypi.org/)
 
 # Technical Overview
