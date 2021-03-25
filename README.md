@@ -103,6 +103,9 @@ The calendar feature helps people to track their schedules. Filter feature helps
 
 ## Screenshots
 
+![architecture]('images/architecture.png')
+![app screenshots]('images/app_screenshots.png')
+
 ## Enhancements
 
 - People can register in the app before dropping their bottles into the bin. Thus, Once they drop the bottles, the number of bottles is auto-calculated and the equivalent reddem points can be  attached to the bar code that is tagged with their mobile app. They can scan this bar code in any partnered food stalls all over the country to encash their points for food.
