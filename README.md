@@ -64,8 +64,34 @@ ARM Templates are a way to declare the objects you want, the types, names and pr
 Infrastructure as code is the way to automate the deployment. When utilizing this strategy, we usually define the infrastructure & configuration of the project using the code, where you declare the required objects, types, names, and properties in a JSON file format.
 
 Azure Resource Manager templates (ARM templates) are the way to implement infrastructure as code for your Azure solutions. ARM templates use a declarative syntax to get the required inputs from the user, thus enabling the user to redeploy the infrastructure with minimal effort. We have stored the ARM templates to reproduce our infrastructure under the AzureResourceGroup folder of our Github Repo. With just a click, You can reproduce our infrastructure.
+
+## Benifits
+
+### Plastic bottles can be collected with ease
+The proposed automated system automatically detects and recognizes the plastic bottle. Thus more collection bins can be placed in the stalls and bottle collection will be very quick as the Object detection system recognizes the plastic bottle, count the number and update the database.
+
+    **Future improvements :**
+    The Bin capacity will be monitored using IoT Central and notification will be sent if the bin is about to overflow
+
+### Digitization of physical bills
+The app has an option to scan the images of the physical bills and it converts the image into the physical text via image recognition. The system has stored the images of the physical bills in a separate database for later reference (Maybe, Useful for tax claims). Thus transparency can be maintained.
+
+### Easy volunteer addition
+The interactive app prototype has a feature where volunteers can be added and notified about the event. Consider a scenario, If 10 people have shown interest in volunteering, their mail IDs can be added to the mobile app. Any delay in the event, any excess food details can be shared with all volunteers with a single click thus they can address the issue by bringing the right people.The contacts of the volunteers will be maintained at the database, thus the NGO can contact/notify them about future events without much difficulties.
+
+### Easy Impact report Generation
+The location, number of benefited people, Pictures of the events, delivered product list , financial and funding details will be attached to the event ID thus much helpful to generate the impact report.
+
+### Schedule maintainence
+The calendar feature helps people to track their schedules. Filter feature helps them to filter the events based on the IDs and get all the relevant data with a single click.
+
 ## Screenshots
 
 ## Enhancements
 
+People can register in the app before dropping their bottles into the bin. Thus, Once they drop the bottles, the number of bottles is auto-calculated and the equivalent points are attached to the bar code that is tagged with their mobile app. They can scan this bar code in the partnered food stalls all over the country to encash their points for food.
+
+The same idea can be implemented for City administration, Marine clean-up, disaster recovery with slight modifications.
+
 ## Demo 
+ [Demo](https://youtube.com) 
