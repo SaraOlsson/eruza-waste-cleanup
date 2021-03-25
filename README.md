@@ -65,13 +65,10 @@ Infrastructure as code is the way to automate the deployment. When utilizing thi
 
 Azure Resource Manager templates (ARM templates) are the way to implement infrastructure as code for your Azure solutions. ARM templates use a declarative syntax to get the required inputs from the user, thus enabling the user to redeploy the infrastructure with minimal effort. We have stored the ARM templates to reproduce our infrastructure under the AzureResourceGroup folder of our Github Repo. With just a click, You can reproduce our infrastructure.
 
-## Benifits
+## Benefits
 
 ### Plastic bottles can be collected with ease
 The proposed automated system automatically detects and recognizes the plastic bottle. Thus more collection bins can be placed in the stalls and bottle collection will be very quick as the Object detection system recognizes the plastic bottle, count the number and update the database.
-
-    **Future improvements :**
-    The Bin capacity will be monitored using IoT Central and notification will be sent if the bin is about to overflow
 
 ### Digitization of physical bills
 The app has an option to scan the images of the physical bills and it converts the image into the physical text via image recognition. The system has stored the images of the physical bills in a separate database for later reference (Maybe, Useful for tax claims). Thus transparency can be maintained.
@@ -92,6 +89,8 @@ The calendar feature helps people to track their schedules. Filter feature helps
 People can register in the app before dropping their bottles into the bin. Thus, Once they drop the bottles, the number of bottles is auto-calculated and the equivalent points are attached to the bar code that is tagged with their mobile app. They can scan this bar code in the partnered food stalls all over the country to encash their points for food.
 
 The same idea can be implemented for City administration, Marine clean-up, disaster recovery with slight modifications.
+
+The Bin capacity can be monitored using IoT Central and notification will be sent if the bin is about to overflow
 
 ## Demo 
  [Demo](https://youtube.com) 
