@@ -112,7 +112,7 @@ Screenshots - Web app
 Future work would be to add incentives for more people to recycle their plastic waste, possibly in a fully automated system:
 - People could register in the app before dropping their bottles into an IoT-connected waste bin. Thus, Once they drop the bottles, the number of bottles is auto-calculated and the equivalent reddem points can be attached to the bar code that is tagged with their mobile app. They can scan this bar code in any partnered food stalls all over the country to encash their points for food.
 - The bin capacity can be auto monitored using IoT Central and can enable auto notification to the administrator in case of bin overflow 
-- The app can also be used for City administration, Marine clean-up, disaster recovery, etc with slight modifications.
+- The app can also be used for Smart city administration, Marine clean-up, Disaster recovery, etc with slight modifications.
 
 
 ## Demo 
