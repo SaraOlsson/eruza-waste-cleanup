@@ -6,6 +6,11 @@ import LoyaltyRoundedIcon from '@material-ui/icons/LoyaltyRounded'
 import NotificationsIcon from '@material-ui/icons/Notifications'
 import PublishIcon from '@material-ui/icons/PublishRounded'
 
+import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
+import MicIcon from '@material-ui/icons/Mic';
+import TimelineIcon from '@material-ui/icons/Timeline';
+import ReceiptIcon from '@material-ui/icons/Receipt';
+
 import React from 'react'
 
 import { useHistory } from "react-router-dom"
@@ -36,10 +41,11 @@ function BottomMenuBar() {
   
         <BottomNavigation value={value} onChange={ (evt,value) => handleMenuClick(evt, value) } 
             className={classes.bottomMenu}>
-          <BottomNavigationAction label="scan" value="scan" icon={<HomeRoundedIcon />} />
-          <BottomNavigationAction label="photo" value="photo" icon={<PublishIcon />} />
-          <BottomNavigationAction label="speech" value="speech" icon={<NotificationsIcon />} />
-          <BottomNavigationAction label="stats" value="stats" icon={<LoyaltyRoundedIcon />} />
+          <BottomNavigationAction label="home" value="home" icon={<HomeRoundedIcon />} />
+          <BottomNavigationAction label="speech" value="speech" icon={<MicIcon />} />
+          <BottomNavigationAction label="photo" value="photo" icon={<AddAPhotoIcon />} />
+          <BottomNavigationAction label="scan" value="scan" icon={<ReceiptIcon />} />
+          <BottomNavigationAction label="report" value="report" icon={<TimelineIcon />} />
         </BottomNavigation>
   
       </>

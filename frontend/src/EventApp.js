@@ -2,13 +2,17 @@ import React, {useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Route, Switch } from "react-router-dom";
 import './custom.css'
+import StickyFooter from './components/StickyFooter'
 
 import TopMenuBar from './components/TopMenuBar';
 import BottomMenuBar from "./components/BottomMenuBar";
 
 import {
     SpeechPage,
-    CameraPage
+    CameraPage,
+    ReceiptPage,
+    HomePage,
+    ReportPage
 } from './pages'
 
 // main component of the app
@@ -26,25 +30,26 @@ function EventApp() {
   
           <div className={classes.headerrow}>
             <TopMenuBar/>
+            <BottomMenuBar/>
           </div>
   
           <div className={`${classes.mainContainer}`}>
   
             <Switch>
-              <Route exact path="/home" component={SpeechPage}/>
-              <Route path="/scan" component={SpeechPage} />
+              <Route exact path="/home" component={HomePage}/>
+              <Route path="/scan" component={ReceiptPage} />
               <Route path="/photo" component={CameraPage} />
               <Route path="/speech" component={SpeechPage} />
-              <Route path="/stats" component={SpeechPage} />
+              <Route path="/report" component={ReportPage} />
             </Switch>
 
           </div>
   
-          <div className={classes.footer}>
+          {/* <div className={classes.footer}>
             <BottomMenuBar/>
           </div>
   
-        
+        <StickyFooter/> */}
         
       </div>
 
@@ -61,15 +66,15 @@ function EventApp() {
       marginRight: 'auto',
       background: '#d4dcd5',
 
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'space-between',
-      height: '90%'
+      // display: 'flex',
+      // flexDirection: 'column',
+      // justifyContent: 'space-between',
+      height: '100%'
     },
     mainContainer: {
-        paddingTop: '60px',
-        paddingBottom: '50px',
-        minHeight: 300
+        padding: 20,
+        height: '100%',
+        overflow: 'scroll'
     },
     footer: {
         // position: 'fixed',

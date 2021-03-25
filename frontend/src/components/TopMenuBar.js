@@ -302,6 +302,7 @@ function TopMenuBar(props) {
 const useStyles = makeStyles(theme => ({
   grow: {
     flexGrow: 1,
+    backgroundColor: '#009688'
     //marginBottom: '50px'
   },
   menuButton: {
