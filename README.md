@@ -14,9 +14,18 @@ High level directory structure for this repository:
 ```
 
 
-### Dependencies
+### Azure Requirement
 1. [Azure Account](https://portal.azure.com) 
-2. 
+2. [Custom Vision Service](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/)
+3. [Optical Character Recognition (OCR)](https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/concept-recognizing-text)
+4. [Read API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d986960601faab4bf452005)
+5. [Azure Storage Account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview)
+6. [Blob containers](https://docs.microsoft.com/en-us/azure/storage/blobs/)
+7. [Storage table](https://docs.microsoft.com/en-us/azure/storage/tables/table-storage-overview)
+8. [Azure IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/?view=iotedge-2018-06)
+9. [Azure IoT Central](https://docs.microsoft.com/en-us/azure/iot-central/)
+10.[Azure SDK](https://azure.github.io/azure-sdk-for-js/) 
+11.[Raspberry Pi](https://www.raspberrypi.org/)
 
 # Technical Overview
 We have used the [Custom Vision Service](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/) for object detection. Object detection is useful to detect plastic bottles and count them.  Then we have used [Optical Character Recognition (OCR)](https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/concept-recognizing-text) for converting the image of the receipt into digital text.  We have created our application as a progressive web app (More details are given below). [Azure Blob container](https://docs.microsoft.com/en-us/azure/storage/blobs/) is used as a database to store the images of plastic bottles, receipts and event images. Storage tables are used for storing the event details, stats about collected bottles, product lists, digitized content of the receipt, etc. We also took advantage of [Azure IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/?view=iotedge-2018-06), [Azure IoT Central](https://docs.microsoft.com/en-us/azure/iot-central/), and used devices like [Raspberry Pi](https://www.raspberrypi.org/) as well. More detailed content is discussed below.
