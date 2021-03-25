@@ -1,14 +1,10 @@
 import React, {useState} from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button';
-// import AddImage from '../components/AddImage'
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import { computerVision, isConfigured as ComputerVisionIsConfigured } from '../services/azure-cognitiveservices-computervision'
 
 function ReceiptPage() {
-
-
-    const [image, setImage] = React.useState(undefined);
     
     const [fileSelected, setFileSelected] = useState(null);
     const [analysis, setAnalysis] = useState(null);
@@ -31,27 +27,7 @@ function ReceiptPage() {
         setFileSelected("");
         setProcessing(false);
         });
-
     };
-
-    // const onFileAdd = (files) => {
-
-    //     var reader = new FileReader();
-    //     reader.onload = function(e) {
-    //       setImage(e.target.result);
-    //     }
-    
-    //     try {
-    //         reader.readAsDataURL(files[0]);
-    //     } catch(err) {
-    //         console.log(err.message);
-    //     }
-        
-    // };
-
-    // const onFileRemove = () => {
-    //     setImage(undefined);
-    // };
 
     // Display JSON data in readable format
     const PrettyPrintJson = (data) => {

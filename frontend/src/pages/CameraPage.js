@@ -7,7 +7,8 @@ import axios from 'axios';
 
 function CameraPage() {
 
-
+    const [fileSelected, setFileSelected] = React.useState(null);
+    const [processing, setProcessing] = React.useState(false);
     const [image, setImage] = React.useState(undefined);
     const [numBottles, setNumBottles] = React.useState('');
     const classes = useStyles()
@@ -19,7 +20,7 @@ function CameraPage() {
         var reader = new FileReader();
         reader.onload = function(e) {
           setImage(e.target.result);
-          trySendRequest(e.target.result) // using URL atm
+          // trySendRequest(e.target.result) // using URL atm
         }
     
         try {
@@ -28,6 +29,24 @@ function CameraPage() {
             console.log(err.message);
         }
         
+    };
+
+    const handleChange = (e) => {
+        setFileSelected(e.target.value)
+    }
+    const onFileUrlEntered = (e) => {
+
+        // hold UI
+        setProcessing(true)
+        // setAnalysis(null);
+
+        trySendRequest(null) // using URL atm
+
+        // reset state/form
+        // setAnalysis(item);
+        setFileSelected("");
+        // setProcessing(false);
+       
     };
 
     const trySendRequest = async (imageData) => {
@@ -45,7 +64,8 @@ function CameraPage() {
         // 'application/octet-stream'
         // 'application/json'
 
-        const body = {"Url": "https://eruzawastestorage.blob.core.windows.net/event-images/plastic/1616245404771.jpg"};
+        // const body = {"Url": "https://eruzawastestorage.blob.core.windows.net/event-images/plastic/1616245404771.jpg"};
+        const body = {"Url": fileSelected};
         const url_url = 'https://customvisionhhs.cognitiveservices.azure.com/customvision/v3.0/Prediction/c11ba780-1341-49b1-8e6b-d536093afe00/detect/iterations/Iteration1/url'
         const url_image = 'https://customvisionhhs.cognitiveservices.azure.com/customvision/v3.0/Prediction/c11ba780-1341-49b1-8e6b-d536093afe00/detect/iterations/Iteration1/image'
 
@@ -54,6 +74,7 @@ function CameraPage() {
             
             console.log(detectResponse);
             parseDetection(detectResponse)
+            setProcessing(false)
 
 
             
@@ -88,10 +109,6 @@ function CameraPage() {
             <h3>Capture event image</h3>
             <AddImage image={image} onFileAdd={onFileAdd} onFileRemove={onFileRemove}/>
 
-            {numBottles !== '' &&
-                <h3>Num bottles found in image: {numBottles}</h3> 
-            }
-
             <div className={classes.manageContainer}>
                 <Button
                     variant="contained"
@@ -106,6 +123,29 @@ function CameraPage() {
                 </div>
             </div>
 
+            <p>Try object detection with image: 'https://eruzawastestorage.blob.core.windows.net/event-images/plastic/1616245404771.jpg'</p>
+            <div>
+                <label>URL</label>
+                <input type="text" placeholder="Enter URL" size="50" onChange={handleChange}></input>
+            </div>
+            <Button
+                variant="contained"
+                color="primary"
+                onClick={onFileUrlEntered}
+                style={{lineHeight: '1.2'}}
+                disabled={fileSelected === ''}
+                >
+                Analyze
+            </Button>
+
+            {processing &&
+                <p>Analyzing.. </p>
+            }
+
+            {numBottles !== '' &&
+                <h3>Num bottles found in image: {numBottles}</h3> 
+            }
+
         </div>
     );
 }
@@ -119,7 +159,8 @@ const useStyles = makeStyles({
         backgroundColor: '#f5f5f5', // #002039',
         borderRadius: 15,
         padding: 30,
-        margin: 10
+        margin: 10,
+        marginBottom: 50
     },
     infoText: {
         fontSize: 'small'
