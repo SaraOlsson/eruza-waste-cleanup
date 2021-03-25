@@ -103,8 +103,8 @@ The calendar feature helps people to track their schedules. Filter feature helps
 
 ## Screenshots
 
-![architecture]('images/architecture.png')
-![app screenshots]('images/app_screenshots.png')
+![architecture](images/architecture.png)
+![app screenshots](images/app_screenshots.png)
 
 ## Enhancements
 
