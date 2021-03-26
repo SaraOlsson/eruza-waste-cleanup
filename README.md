@@ -78,25 +78,25 @@ This tech comes in handy to operate in places that have limited internet connect
 
 ## Benefits
 
-- Plastic bottles collection - Fast & Easy
+- **Plastic bottles collection - Fast & Easy**
   The proposed automated system automatically recognize and count the number of plastic bottle. Thus stats can be updated in the database with ease.
 
-- Digitization of physical bills
+- **Digitization of physical bills**
   The app has an option to scan the images of the physical bills with a single click and it converts the image into the digital text via image recognition. The system will also   store the images of the physical bills in a separate database for later reference (Maybe, Useful for tax claims). Thus transparency can be maintained.
 
-- Easy volunteer addition
+- **Easy volunteer addition**
   The interactive app prototype has a feature where volunteers can be added and notified about the event. Consider a scenario, If 10 people have shown interest in volunteering,   their mail IDs can be added to the mobile app. Any delay in the event, any excess food details can be shared with all volunteers with a single click thus they can address the   issue by bringing the right people.The contacts of the volunteers will be maintained at the database, thus the NGO can contact/notify them about future events without much     difficulties.
 
-- Event Multimedia Database
+- **Event Multimedia Database**
   The app has the option to click pictures/videos during the event. Later, the pictures can be retrieved from the database if required for the impact report
 
-- Voice Support
+- **Voice Support**
   The volunteer cab update the collected plastic bottle count by just tapping the mic and talking. The Speech API will convert it into the text and store the data in the  database
 
-- Easy Impact report Generation
+- **Easy Impact report Generation**
   The location, number of benefited people, Pictures of the events, delivered product list , financial and funding details will be attached to the event ID thus much helpful to  generate the impact report.
 
-- Schedule maintainence
+- **Schedule maintainence**
   The calendar feature helps people to track their schedules. Filter feature helps them to filter the events based on the IDs and get all the relevant data with a single click.
 
 ## Screenshots
